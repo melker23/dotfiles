@@ -11,11 +11,10 @@ makepkg -si --noconfirm
 cd ..
 rm -rf yay
 
-# Install penetration testing tools
-yay -S --noconfirm wireshark-qt nmap nikto sqlmap metasploit aircrack-ng hydra john burpsuite
+echo "Yay has been installed"
 
-# Install additional penetration testing tools
-yay -S --noconfirm nmap gobuster dirbuster
+# Install penetration testing tools
+yay -S --noconfirm wireshark-qt nmap nikto sqlmap metasploit aircrack-ng hydra john burpsuite gobuster dirbuster
 
 # Set up BlackArch repository
 curl -O https://blackarch.org/strap.sh
@@ -27,3 +26,8 @@ sudo ./strap.sh
 sudo pacman -Syu
 
 echo "Penetration testing tools installed successfully."
+
+sudo git clone https://github.com/danielmiessler/SecLists.git /opt/SecLists
+
+echo "Wordlists installed"
+
